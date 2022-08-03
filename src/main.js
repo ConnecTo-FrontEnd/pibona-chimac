@@ -2,8 +2,7 @@ function Fibonacci(n) {
   let fibonacci = [1, 1];
   let state = true;
   while (state) {
-    let value =
-      fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2];
+    let value = fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2];
     if (value > n) {
       state = false;
       break;
@@ -28,5 +27,10 @@ function pibona_chimac(n) {
     total += pibonachi[groupIndex - 1];
     n -= pibonachi[groupIndex];
   }
-  return total;
+  output.innerHTML = total;
 }
+
+let btn = document.querySelector("button");
+let input = document.querySelector("input");
+let output = document.querySelector("strong");
+btn.addEventListener("click", () => pibona_chimac(input.value));
