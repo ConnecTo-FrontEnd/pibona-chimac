@@ -1,5 +1,20 @@
+function Fibonacci(n) {
+  let fibonacci = [1, 1];
+  let state = true;
+  while (state) {
+    let value =
+      fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2];
+    if (value > n) {
+      state = false;
+      break;
+    }
+    fibonacci.push(value);
+  }
+  return fibonacci;
+}
+
 function pibona_chimac(n) {
-  const pibonachi = [1, 1, 2, 3, 5, 8, 13];
+  const pibonachi = Fibonacci(n);
 
   function getBiggestSmallerGroup(n) {
     for (let i = pibonachi.length - 1; i >= 0; i--) {
@@ -15,4 +30,3 @@ function pibona_chimac(n) {
   }
   return total;
 }
-
