@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.container{
+    background-color: darksalmon ;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px;
+}
