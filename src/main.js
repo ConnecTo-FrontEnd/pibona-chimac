@@ -10,7 +10,23 @@ function Fibonacci(n) {
     }
     fibonacci.push(value);
   }
-  console.log(fibonacci);
+  return fibonacci;
 }
 
-Fibonacci(6);
+function pibona_chimac(n) {
+  const pibonachi = Fibonacci(n);
+
+  function getBiggestSmallerGroup(n) {
+    for (let i = pibonachi.length - 1; i >= 0; i--) {
+      if (pibonachi[i] <= n) return i;
+    }
+  }
+
+  let total = 0;
+  while (n) {
+    let groupIndex = getBiggestSmallerGroup(n);
+    total += pibonachi[groupIndex - 1];
+    n -= pibonachi[groupIndex];
+  }
+  return total;
+}
